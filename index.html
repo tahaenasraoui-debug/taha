@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tahary | Math & CS student, builder</title>
+<meta name="description" content="Tahary (Mohamed Taha Enasraoui), Mathématiques-Informatique student at FSR Rabat. Open-source projects, tools and learning roadmaps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5f9; --surface:#e9ebf3; --ink:#161a2b; --muted:#555c75;
+  --line:#cfd3e2; --accent:#3a4bd6; --accent-ink:#ffffff;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10131d; --surface:#181c2a; --ink:#e9e8e2; --muted:#9aa1b8;
+    --line:#2b3145; --accent:#93a6ff; --accent-ink:#10131d;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10131d; --surface:#181c2a; --ink:#e9e8e2; --muted:#9aa1b8;
+  --line:#2b3145; --accent:#93a6ff; --accent-ink:#10131d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{display:flex;gap:20px;align-items:center;padding:22px 0;font-size:15px;color:var(--muted)}
+nav a{text-decoration:none}
+nav a:hover{color:var(--ink)}
+nav .sp{flex:1}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer}
+header.hero{padding:72px 0 56px}
+h1{font:800 clamp(52px,12vw,112px)/.95 var(--head);letter-spacing:-.04em;margin:0 0 24px}
+.lede{font-size:clamp(19px,2.6vw,24px);line-height:1.5;max-width:34em;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:500;border:1px solid var(--line)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:700 30px/1.15 var(--head);letter-spacing:-.02em;margin:0 0 24px}
+p{max-width:38em;margin:0 0 16px}
+.muted{color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{font:inherit;font-size:14px;padding:5px 14px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.proj{list-style:none;margin:0;padding:0}
+.proj li{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.proj li[hidden]{display:none}
+.proj h3{font:700 22px/1.2 var(--head);margin:0}
+.proj h3 a{text-decoration:none}
+.proj h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.proj p{grid-column:1;margin:4px 0 8px;color:var(--muted)}
+.tags{grid-column:1;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;color:var(--muted)}
+.tags span::before{content:"#";color:var(--accent)}
+.status{grid-row:1;grid-column:2;font-size:14px;color:var(--muted);align-self:center}
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.stack h3{font:700 17px var(--head);margin:0 0 8px}
+.stack p{font-size:16px;margin:0;color:var(--muted)}
+.contact a.mail{font:700 clamp(22px,5vw,36px)/1.2 var(--head);letter-spacing:-.02em;word-break:break-all}
+footer{padding:32px 0 56px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+@media (max-width:560px){.proj li{grid-template-columns:1fr}.status{grid-row:auto;grid-column:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#stack">Skills</a>
+    <a href="#contact">Contact</a>
+    <span class="sp"></span>
+    <button id="theme" type="button" aria-label="Toggle colour theme">Theme</button>
+  </nav>
+
+  <header class="hero">
+    <h1>Tahary</h1>
+    <p class="lede">Maths and computer science student in Morocco. I build small, useful tools, ship them in the open, and write down what I learn along the way.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn" href="https://github.com/tahaenasraoui-debug">GitHub</a>
+      <a class="btn" href="mailto:tahaenasraoui@gmail.com">Email me</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I'm Mohamed Taha Enasraoui, known as Tahary. I finished the Sciences Mathématiques track at Moulay Youssef in June 2026 and now study Mathématiques-Informatique (MI) in my first year at the Faculté des Sciences de Rabat, Agdal.</p>
+    <p>I work on Linux, and most of what I make is open source: web apps, offline-first tools, and roadmaps for learning machine learning and the different branches of computer science. I'm aiming at an international university and building freelance coding work alongside my studies.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="app" aria-pressed="false">Apps</button>
+      <button type="button" data-f="tool" aria-pressed="false">Tools</button>
+      <button type="button" data-f="learning" aria-pressed="false">Learning</button>
+    </div>
+    <ul class="proj">
+      <li data-c="app">
+        <h3><a href="https://github.com/tahaenasraoui-debug">MakeFud</a></h3>
+        <span class="status">Open source, MIT</span>
+        <p>A recipe web app. Type in what's in your fridge and get recipes you can cook with it. Runs on GitHub Pages and has a demo mode, so it works without an API key.</p>
+        <div class="tags"><span>javascript</span><span>spoonacular-api</span><span>hacktoberfest</span></div>
+      </li>
+      <li data-c="app">
+        <h3><a href="https://github.com/tahaenasraoui-debug">The Verdant Knight</a></h3>
+        <span class="status">Hacktoberfest</span>
+        <p>An offline naturalist RPG built as a PWA for the "Touch Grass" theme. Walk in Trail Mode, rest at the Campfire, and fill your Codex, with an offline vision model identifying what you find.</p>
+        <div class="tags"><span>pwa</span><span>offline-first</span><span>on-device-ml</span></div>
+      </li>
+      <li data-c="tool">
+        <h3><a href="https://github.com/tahaenasraoui-debug">VaultLedger</a></h3>
+        <span class="status">Desktop</span>
+        <p>An offline desktop tool that turns a freelancer's invoices and receipts into a tax-ready CSV. Everything runs locally, including the language model that reads the documents.</p>
+        <div class="tags"><span>rust</span><span>tauri-v2</span><span>local-llm</span></div>
+      </li>
+      <li data-c="tool">
+        <h3><a href="https://github.com/tahaenasraoui-debug/NatroMacro">NatroMacro fork</a></h3>
+        <span class="status">Fork</span>
+        <p>My fork of the Natro Macro for Bee Swarm Simulator, with tuned movement paths for the pine tree field pattern on the wf-pinetree branch.</p>
+        <div class="tags"><span>autohotkey</span><span>automation</span></div>
+      </li>
+      <li data-c="learning">
+        <h3><a href="https://github.com/tahaenasraoui-debug">ML and AI roadmap</a></h3>
+        <span class="status">README</span>
+        <p>A staged learning path from math primers through PyTorch, Hugging Face and ChromaDB, written for self-learners who want a clear order to study things in.</p>
+        <div class="tags"><span>machine-learning</span><span>pytorch</span><span>roadmap</span></div>
+      </li>
+      <li data-c="learning">
+        <h3><a href="https://github.com/tahaenasraoui-debug">CS branch roadmaps</a></h3>
+        <span class="status">READMEs</span>
+        <p>A set of roadmaps, one per branch of computer science: algorithms and big data, cybersecurity, networks and cloud, systems, HCI, graphics and games, robotics and IoT.</p>
+        <div class="tags"><span>computer-science</span><span>education</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="stack">
+    <h2>What I work with</h2>
+    <div class="stack">
+      <div><h3>Languages</h3><p>Python, JavaScript, Rust, C, AutoHotkey</p></div>
+      <div><h3>Environment</h3><p>Linux, Git and GitHub, the terminal</p></div>
+      <div><h3>Learning now</h3><p>Machine learning with PyTorch, discrete maths, algorithms</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Open to freelance coding work and open-source collaboration.</p>
+    <p><a class="mail" href="mailto:tahaenasraoui@gmail.com">tahaenasraoui@gmail.com</a></p>
+    <p class="muted"><a href="https://github.com/tahaenasraoui-debug">github.com/tahaenasraoui-debug</a></p>
+  </section>
+
+  <footer>© <span id="yr">2026</span> Mohamed Taha Enasraoui</footer>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var btns = document.querySelectorAll('.filters button');
+  var items = document.querySelectorAll('.proj li');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var f = b.dataset.f;
+      items.forEach(function(li){ li.hidden = !(f === 'all' || li.dataset.c === f); });
+    });
+  });
+  var root = document.documentElement;
+  document.getElementById('theme').addEventListener('click', function(){
+    var dark = root.dataset.theme ? root.dataset.theme === 'dark'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+  });
+})();
+</script>
+</body>
+</html>
